@@ -1,32 +1,39 @@
-import './App.css';
+import { Routes, Route, Link } from "react-router-dom";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import Sidebar from "./components/Sidebar";
+import CV from "./components/CV";
 
-function App() {
+const App = () => {
   return (
-    <section class="flex flex-row">
-        <section class="shrink-0 mx-7 my-10 h-full sm:basis-48">
-            <section>
-                <h1 class="text-xl sm:text-3xl font-mono font-bold">Emilio <br /> Ovalles- <br /> Misterman</h1>
-            </section>
-        
-            <section class="text-xs sm:text-sm font-mono font-normal mt-16">
-                <ul>
-                    <li class="mb-4"><a href="index.html">Home</a></li>
-                    <li class="mb-4"><a href="about.html">About</a></li>
-                    <li class="mb-4"><a href="projects.html">Projects</a></li>
-                    <li class="mb-4"><a href="contact.html">Contact</a></li>
-                    <li class="mb-4"><a href="contact.html">CV</a></li>
-                </ul>
-            </section>
-
-        </section>
-    
-        <section class="min-h-fit basis-auto my-10 mr-7 text-sm font-mono text-slate-700 max-w-lg">
-            
-        </section>
-
-        
+    <section className="flex flex-row font-mono">
+        <Routes>
+          <Route index element={<Home />} />
+          <Route element={<Sidebar />}>
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/cv" element={<CV />} />
+          </Route>
+        </Routes>
     </section>
   );
 }
 
 export default App;
+
+const Home = () => {
+  const style = "text-normal font-thin m-8"
+  return (
+    <article className="h-screen table w-full">
+      <div className="table-cell align-middle text-center">
+        <h1 className="text-5xl font-bold mb-12">Emilio Ovalles-Misterman</h1>
+        <Link to="/about" className={style}>About</Link>
+        <Link to="/projects" className={style}>Projects</Link>
+        <Link to="/contact" className={style}>Contact</Link>
+        <Link to="/cv" className={style}>CV</Link>
+      </div>
+    </article>
+  );
+}
