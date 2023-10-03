@@ -12,7 +12,6 @@ const Sidebar = () => {
                     <Link to="/about" className="block w-full mb-4">About</Link>
                     <Link to="/projects" className="block w-full mb-4">Projects</Link>
                     <Link to="/contact" className="block w-full mb-4">Contact</Link>
-                    <Link to="/cv" className="block w-full mb-4">CV</Link>
                 </section>
 
             </section>

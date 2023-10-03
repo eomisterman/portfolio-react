@@ -3,7 +3,6 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Sidebar from "./components/Sidebar";
-import CV from "./components/CV";
 
 const App = () => {
   return (
@@ -14,7 +13,6 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/cv" element={<CV />} />
           </Route>
         </Routes>
     </section>
@@ -32,7 +30,6 @@ const Home = () => {
         <Link to="/about" className={style}>About</Link>
         <Link to="/projects" className={style}>Projects</Link>
         <Link to="/contact" className={style}>Contact</Link>
-        <Link to="/cv" className={style}>CV</Link>
       </div>
     </article>
   );
