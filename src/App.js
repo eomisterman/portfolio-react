@@ -7,30 +7,38 @@ import Sidebar from "./components/Sidebar";
 const App = () => {
   return (
     <section className="flex flex-row font-mono">
-        <Routes>
-          <Route index element={<Home />} />
-          <Route element={<Sidebar />}>
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
-          </Route>
-        </Routes>
+      <Routes>
+        <Route index element={<Home />} />
+        <Route element={<Sidebar />}>
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+        </Route>
+      </Routes>
     </section>
   );
-}
+};
 
 export default App;
 
 const Home = () => {
-  const style = "text-normal font-thin m-2 sm:m-8"
+  const style = "text-normal font-thin m-2 sm:m-8";
   return (
     <article className="h-screen table w-full">
       <div className="table-cell align-middle text-center">
-        <h1 className="text-2xl sm:text-5xl font-bold mb-12">Emilio Ovalles-Misterman</h1>
-        <Link to="/about" className={style}>About</Link>
-        <Link to="/projects" className={style}>Projects</Link>
-        <Link to="/contact" className={style}>Contact</Link>
+        <h1 className="text-2xl sm:text-5xl font-bold mb-12">
+          Emilio Ovalles-Misterman
+        </h1>
+        <Link to="/about" className={style}>
+          About
+        </Link>
+        <Link to="/projects" className={style}>
+          Projects
+        </Link>
+        <Link to="/contact" className={style}>
+          Contact
+        </Link>
       </div>
     </article>
   );
-}
+};
